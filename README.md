@@ -1,189 +1,124 @@
-# 🛍️ LUXE – Modern E-Commerce Product Page
+# 🛍️ LUXE — Premium Modern E-Commerce Experience
 
-A **production-ready, single-file** React + Tailwind CSS e-commerce application with a clean, professional UI inspired by modern platforms like Amazon, Flipkart, and Apple Store.
+[![Live Demo](https://img.shields.io/badge/Demo-Live%20Link-brightgreen?style=for-the-badge&logo=netlify&color=e8633a)](https://e-commerce-web-luke.netlify.app/)
+[![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react&color=61dafb)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3-blue?style=for-the-badge&logo=tailwindcss&color=38bdf8)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-latest-purple?style=for-the-badge&logo=vite&color=646cff)](https://vitejs.dev/)
+
+A highly immersive, production-ready, fully responsive React & Tailwind CSS E-Commerce platform. Designed with premium aesthetics, rich micro-animations, clean transition effects, and a dynamic interactive dual-theme system.
+
+🔗 **Explore the Live Site:** [https://e-commerce-web-luke.netlify.app/](https://e-commerce-web-luke.netlify.app/)
 
 ---
 
-## ✅ Completed Features
+## ✨ Features & Micro-Interactions
 
-### 🏠 Product Listing Page (Home `/`)
-- Responsive hero banner with gradient background and decorative elements
-- Category filter chips (All, Electronics, Smartphones, Laptops, Fashion, etc.)
-- Sort toolbar: Featured / Newest / Price Low–High / Price High–Low / Top Rated
-- Price range slider filter panel
-- **Skeleton loaders** (1.2s shimmer effect while data loads)
-- Responsive product grid: 1 col (mobile) → 2 (tablet) → 3 (desktop) → 4 (wide)
-- Empty state illustration with reset button
+### 🎨 Visual & Motion Design
+*   **Smooth Theme Transitions:** Seamless `0.4s` cross-fade transition when switching between dark and light modes.
+*   **Animated Theme Toggle:** A custom, physics-based animated Toggle Button complete with stars, moon craters, and sun rays.
+*   **Interactive Background (`.animated-bg`):** Floating dynamic particles and an animated backdrop gradient that shifts in real time under the page content.
+*   **Premium Glassmorphism Header:** Floating Navbar with a transparent glass effect (`backdrop-blur-md`), integrated search bar, active navigation indicator, and dynamic user avatar menu.
 
-### 🃏 Product Card
-- Lazy-loaded product image with hover zoom (scale 1.1)
-- Category badge, custom label badge (Best Seller, New, Hot Deal, etc.)
-- Discount % badge calculated from originalPrice vs price
-- Low-stock warning overlay ("Only N left!")
-- Star rating component with half-star support
-- Price + original price + savings display
-- **View Details** & **Add to Cart** buttons with hover effects
-- translateY(-6px) lift + shadow enhancement on card hover
+### 🏠 Product Discovery Page (Home `/`)
+*   **Curated Collection Hero:** Elegant hero heading with custom font pairing (`Playfair Display` + `DM Sans`) and custom accents.
+*   **Interactive Filters:** Category pill filter buttons with active state animations.
+*   **Smart Sorting:** Sort products dynamically by Featured, Top Rated, Price: Low to High, or Price: High to Low.
+*   **Integrated Search:** Search system matching names and categories across all pages in real time.
+*   **Empty Search States:** Polished custom empty search illustration with one-click clear button.
+
+### 🃏 Product Cards
+*   **Hover Lift Effects:** Smooth `translate-y-[-6px]` translation with expanding soft shadow on card hover.
+*   **Dynamic Badges:** Auto-calculating discount badges, rating scores, and product label badges (e.g., *Bestseller*, *New*, *Popular*).
+*   **Add to Cart Button:** Interactive buttons featuring custom scale physics and color shifts upon selection.
 
 ### 📄 Product Details Page (`/product/:id`)
-- **4-image gallery** with thumbnail selector + active state
-- Breadcrumb navigation
-- Product title, category chip, badge chip
-- Star rating with review count
-- Price / originalPrice / savings chip
-- Real-time stock status (In Stock / Low Stock / Out of Stock)
-- Tag chips
-- **Quantity selector** (+/−) with stock cap
-- Dynamic **Total Price Preview** (price × qty)
-- **Add to Cart** button (shows count if already in cart)
-- **Buy Now** → adds to cart then navigates to cart page
-- Trust badges (Secure Payment / Fast Delivery / Easy Returns)
-- **Tab panel**: Description | Specifications | Reviews (4)
-- Specifications displayed as key-value grid
-- Customer reviews with avatar, verified badge, rating, date
-- **Related Products carousel** with prev/next arrows
+*   **Artisan Image Gallery:** Interactive multi-image gallery with border-aligned thumbnail selectors and smooth active item focus.
+*   **Flexible Breadcrumbs:** Category-aware breadcrumb trails for fast navigation.
+*   **Stock Status Tracking:** Real-time indicator for In Stock, Low Stock, or Out of Stock conditions.
+*   **Quantity Counter:** Interactive counters with caps matching available product stock.
+*   **Dynamic Pricing:** Live preview displaying computed cart subtotal (price × quantity) before adding to cart.
+*   **Trust Indicators:** Muted trust badges for Sustainability, Handcrafted quality, and Easy Returns.
+*   **Related Products Grid:** Contextually filtered recommendations based on current category.
 
-### 🛒 Cart Page (`/cart`)
-- Empty cart illustration with CTA button
-- Cart item list with image, name, category, quantity controls, subtotal, remove
-- **Order Summary card** (sticky on desktop):
-  - Subtotal, Tax (10%), Shipping (FREE over ₹50,000), Grand Total
-  - Free-shipping progress hint
-  - Secure Checkout button with spinner animation
-  - Continue Shopping, Clear Cart buttons
-  - Payment method icons (Visa, Mastercard, Amex, PayPal)
+### 🛒 Cart & Checkout Page (`/cart`)
+*   **Order Summary Card:** Sticky, glassmorphic summary showing subtotal, tax (8%), shipping costs, and grand totals.
+*   **Free Shipping Goal Tracker:** A visual alert showing how much more to add to unlock free shipping (threshold: ₹1,000).
+*   **Item Management:** Dynamic quantity adjustments and item-removal alerts.
+*   **Secure Checkout & Sign-in Flow:** Built-in modal-based sign-in and sign-up flows that integrate smoothly with the checkout process.
 
-### 🧠 State Management (CartContext API)
-- Add / Remove / Increase / Decrease quantity / Clear cart
-- Auto-calculated: totalItems, subtotal, tax, shipping, grandTotal
-- **localStorage persistence** (survives page refresh)
-- Dark mode preference persisted to localStorage
-
-### 🔔 Toast Notifications
-- ✅ Product added to cart
-- ❌ Product removed from cart
-- ℹ️ Cart cleared
-- Auto-dismiss after 3.5s, manual close button, slide-in animation
-
-### 🌙 Dark Mode Toggle
-- One-click toggle in Navbar
-- Full dark palette across all components
-- Persisted in localStorage
-
-### 🔍 Search
-- Real-time search (title + category matching)
-- Works from any page (navigates to home automatically)
-- Mobile-friendly collapsible search bar
-
-### 🎨 UI Enhancements
-- **Glassmorphism navbar** (backdrop blur + semi-transparent)
-- Smooth hover transitions on all interactive elements
-- Page enter fade-in animations
-- Skeleton loaders with pulse animation
-- Custom scrollbar styling
-- Professional footer with links & social icons
+### 🧠 Core Architecture
+*   **State Management (Context API):** Global cart and auth context wrappers providing unified state manipulation.
+*   **Persisted Storage:** Both cart data and the user's light/dark mode preference persist via `localStorage` (survives page reloads).
+*   **Toast System:** Interactive float-in toast alert overlay for user action confirmations (e.g., adding/removing items).
 
 ---
 
-## 📐 Component Structure (inline single-file architecture)
+## 🛠️ Technology Stack
+
+*   **Framework:** React 18 (Hooks, Context, Web Storage)
+*   **Bundler/Build Tool:** Vite (Ultra-fast HMR)
+*   **Styling:** Tailwind CSS v3 & Custom Vanilla CSS Variables
+*   **Typography:** Google Fonts (Playfair Display, DM Sans)
+*   **Routing:** React Router DOM (Single Page Application routing)
+
+---
+
+## 🚀 Local Setup & Development
+
+To run the project locally, follow these simple steps:
+
+1.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/ayushtripathi8846-eng/CODEVEDX_Task3_-E-Commerce_Product-Page.git
+    cd CODEVEDX_Task3_-E-Commerce_Product-Page
+    ```
+
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Start Dev Server:**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build Production Bundle:**
+    ```bash
+    npm run build
+    ```
+
+---
+
+## 📁 Component Directory
 
 ```
-index.html
-│
-├── PRODUCTS[]              ← 12 product data objects
-├── REVIEWS[]               ← 4 review objects
-│
-├── CartContext             ← Context API + localStorage
-├── CartProvider            ← Wraps entire app
-│
-├── Components
-│   ├── Navbar              ← Logo, Search, Cart badge, Dark mode
-│   ├── Rating              ← Filled / half / empty stars
-│   ├── SkeletonCard        ← Shimmer loading placeholder
-│   ├── ProductCard         ← Grid card with interactions
-│   ├── ProductGrid         ← Listing page with filters & sort
-│   ├── ProductDetails      ← Detail page with gallery & tabs
-│   ├── CartItem            ← Single cart row
-│   ├── CartSummary         ← Totals + checkout
-│   ├── CartPage            ← Full cart view
-│   ├── ToastContainer      ← Notification stack
-│   └── Footer
-│
-└── App                     ← SPA router (home / product / cart)
+src/
+├── components/
+│   ├── AuthModal.jsx        ← Sign-in/Sign-up logic & animation modal
+│   ├── Navbar.jsx           ← Navigation, Logo, Search, Cart count, User menu
+│   ├── ProductCard.jsx      ← Grid product card with custom hover scaling
+│   ├── ThemeToggle.jsx      ← Premium animated sun/moon toggle switch
+│   └── Toast.jsx            ← Interactive slide-up notification system
+├── context/
+│   ├── AuthContext.jsx      ← Auth state provider
+│   ├── CartContext.jsx      ← Cart operations & calculations
+│   └── ThemeContext.jsx     ← Synchronous light/dark theme toggle context
+├── data/
+│   └── products.js          ← Curated dataset of products and metadata
+├── pages/
+│   ├── Cart.jsx             ← Cart list, Order Summary, checkout trigger
+│   ├── Home.jsx             ← Product grid listing, search labels, sorting
+│   └── ProductDetail.jsx    ← Multi-image gallery, reviews, quantity controls
+├── App.jsx                  ← Layout routes definitions
+├── index.css                ← Tailored design system tokens & animations
+└── main.jsx                 ← React entrypoint
 ```
 
 ---
 
-## 🛣️ Routes (client-side SPA)
+## 🔮 Roadmap & Next Steps
 
-| State         | View                    |
-|---------------|-------------------------|
-| `home`        | Product Listing Page    |
-| `product + id`| Product Details Page    |
-| `cart`        | Shopping Cart Page      |
-
----
-
-## 🗂️ Product Data Structure
-
-```js
-{
-  id: 1,
-  title: "Sony WH-1000XM5",
-  category: "Electronics",
-  price: 29999,
-  originalPrice: 34999,
-  rating: 4.8,
-  reviews: 2847,
-  stock: 25,
-  badge: "Best Seller",
-  image: "https://...",        // card thumbnail
-  images: ["...", "...", "...", "..."],  // gallery
-  description: "...",
-  specs: { "Key": "Value", ... },
-  tags: ["Wireless", "Premium"]
-}
-```
-
----
-
-## 💰 Cart Calculation Logic
-
-```
-subtotal   = Σ (price × quantity)
-tax        = subtotal × 10%
-shipping   = subtotal > ₹50,000 ? FREE : ₹499
-grandTotal = subtotal + tax + shipping
-```
-
----
-
-## 🛠️ Tech Stack
-
-| Technology       | Purpose                          |
-|-----------------|----------------------------------|
-| React 18         | UI components & state            |
-| Tailwind CSS v3  | Utility-first styling            |
-| Font Awesome 6   | Icons                            |
-| Inter (Google Fonts) | Typography                   |
-| Babel Standalone | JSX transpilation in browser     |
-| localStorage     | Cart & dark-mode persistence     |
-
----
-
-## 🚀 Deployment
-
-To make this site live, go to the **Publish tab** and click **Publish**. No build step required — it's a pure static HTML file.
-
----
-
-## 🔮 Recommended Next Steps
-
-1. **Add authentication** — login/register with JWT or OAuth
-2. **Backend API** — real product & order database (Node.js / Supabase)
-3. **Payment gateway** — Razorpay / Stripe integration
-4. **Wishlist feature** — heart icon to save products
-5. **Product filtering** — multi-select categories, brand filter
-6. **User reviews submission** — form to post reviews
-7. **Order history page** — view past orders
-8. **PWA support** — service worker for offline access
+1.  **Backend Integration:** Connect to a Supabase or Node.js backend for user database persistence.
+2.  **Payment Processing:** Integrate Razorpay or Stripe sandboxes for realistic payment checkout.
+3.  **Advanced Filtering:** Multi-select checklist panel for category, price, and customer ratings filters.
