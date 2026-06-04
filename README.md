@@ -122,3 +122,11 @@ src/
 1.  **Backend Integration:** Connect to a Supabase or Node.js backend for user database persistence.
 2.  **Payment Processing:** Integrate Razorpay or Stripe sandboxes for realistic payment checkout.
 3.  **Advanced Filtering:** Multi-select checklist panel for category, price, and customer ratings filters.
+
+---
+
+## 🔮Meet The Developer
+
+### Ayush Tripathi
+
+**FuLL-Stack Developer**
